@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<hierarchy rotation="0">
+<node bounds="[0,0][1200,1776]" clickable="true" package="com.orangefish.app.delicacy">
+<node bounds="[1,1152][1199,1654]" clickable="true" package="com.orangefish.app.delicacy">
+<node bounds="[939,1460][1061,1582]" clickable="true" package="com.orangefish.app.delicacy"/>
+<node bounds="[539,1460][661,1582]" clickable="true" package="com.orangefish.app.delicacy"/>
+<node bounds="[139,1460][261,1582]" clickable="true" package="com.orangefish.app.delicacy"/>
+<node bounds="[939,1237][1061,1359]" clickable="true" package="com.orangefish.app.delicacy"/>
+<node bounds="[539,1237][661,1359]" clickable="true" package="com.orangefish.app.delicacy"/>
+<node bounds="[139,1237][261,1359]" clickable="true" package="com.orangefish.app.delicacy"/>
+</node>
+<node bounds="[1,115][1199,997]" clickable="true" package="com.orangefish.app.delicacy"/>
+<node bounds="[1112,34][1160,82]" clickable="true" package="com.orangefish.app.delicacy"/>
+<node bounds="[28,13][118,103]" clickable="true" package="com.orangefish.app.delicacy"/>
+</node>
+</hierarchy>

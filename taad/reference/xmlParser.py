@@ -1,13 +1,3 @@
-#-------------------------------------------------------------------------------
-# Name:        璅∪?1
-# Purpose:
-#
-# Author:      b9890_000
-#
-# Created:     21/04/2015
-# Copyright:   (c) b9890_000 2015
-# Licence:     <your licence>
-#-------------------------------------------------------------------------------
 import xml.etree.ElementTree as ET
 import sys
 
@@ -19,8 +9,9 @@ def getViews(root,layer):
     return returnList
 
 def main():
-    Path = sys.argv[1]
-    xml = ET.parse(Path)
+    #Path = sys.argv[1]
+    #xml = ET.parse(Path)
+    xml = ET.parse('UI.xml')
     root = xml.getroot()
     viewList = getViews(root,1)
 

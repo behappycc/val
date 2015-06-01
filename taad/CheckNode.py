@@ -23,27 +23,43 @@ def checkNodeInRegion(firstBoundaryNode, secondBoundaryNode):
         # out of bound
         return False
 
+def getViews(root, layer):
+    returnList = []
+    for child in root:
+      returnList.append((child,layer))
+      returnList.extend(getViews(child,layer+1))
+    return returnList
+
+def printTree(xmlList):
+    for index,view in enumerate(xmlList):
+        print "view" + str(index)
+        for attr in view[0].attrib:
+            print str(attr) +" = "+ str(view[0].attrib[attr])
+        print " "
 def removeNode():
+    newxmlList = []
     #parse xml
     tree = ET.parse('UI.xml')
     root = tree.getroot()
-    initialNode([0,0], [3000,5000])
-    #find all node in tree
-    for node in root.iter('node'):
+    viewList = getViews(root, 1)
+
+    #remove out of bound node
+    initialNode([0,0], [1000,1500])
+    for i, node in enumerate (viewList):
         listTempBounds = np.array([])
-        bounds = node.get('bounds')
+        bounds = node[0].attrib['bounds']
         replacebounds = bounds.replace('][', ',').replace('[','').replace(']','')
         tempbounds = replacebounds.split(',')
         for temp in tempbounds:
             listTempBounds = np.append(listTempBounds, int(temp))
         listBounds = np.reshape(listTempBounds,(2,2))
-        #fisrtNode = listBounds[0], secondNode = listBounds[1]
         if checkNodeInRegion(listBounds[0], listBounds[1]) == True:
-            root.remove(node)
-    tree.write('outputUI.xml')
+            newxmlList.append(node)
+    return newxmlList
 
 def main():
-    removeNode()
+    a = removeNode()
+    printTree(a)
 
 if __name__ == '__main__':
     main()
